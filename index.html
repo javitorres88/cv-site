@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Javier Torres — M.S. in Data Science candidate, CUNY Graduate Center</title>
+  <meta name="description" content="Personal website of Javier Torres — M.S. in Data Science candidate at the CUNY Graduate Center with research experience in health psychology.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    // Apply theme before first paint to avoid a flash of the wrong theme.
+    (function () {
+      var stored = null;
+      try { stored = localStorage.getItem('javier-site-theme'); } catch (e) {}
+      var dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var theme = stored || (dark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark theme">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </header>
+
+  <div class="hero" aria-label="Introduction">
+    <h1 class="name">Javier Torres</h1>
+    <p class="title">M.S. in Data Science candidate &mdash; CUNY Graduate Center</p>
+    <p class="tagline">B.A. in Psychology (Health Psychology) &middot; Behavioral health research &middot; Native Spanish speaker</p>
+    <p class="meta">
+      <span>Brooklyn, New York</span>
+      <span class="dot" aria-hidden="true">&middot;</span>
+      <a href="mailto:Javier.torresgutama85@gc.cuny.edu">Javier.torresgutama85@gc.cuny.edu</a>
+    </p>
+  </div>
+
+  <main id="main">
+    <section id="about" aria-labelledby="about-title">
+      <h2 class="section-title" id="about-title">About</h2>
+      <p>Javier Torres is a Master of Science in Data Science candidate at the CUNY Graduate Center, expected to complete the program in May 2028. He holds a Bachelor of Arts in Psychology with a track in Health Psychology from Hunter College (2024) and an Associate in Arts in Psychology from the Borough of Manhattan Community College (2020).</p>
+      <p>His research experience, primarily in health psychology, spans Weill Cornell Medicine&rsquo;s Division of Geriatrics and Palliative Medicine and Hunter College, including work with older adults living with multiple chronic conditions, Hispanic/Latine communities, and survivors of advanced cancer. He completed the Tandon Bridge Program at NYU Tandon (January&ndash;July 2025) and is a native Spanish speaker.</p>
+    </section>
+
+    <section id="education" aria-labelledby="education-title">
+      <h2 class="section-title" id="education-title">Education</h2>
+      <div class="entry">
+        <h3>The City University of New York (CUNY) Graduate Center</h3>
+        <p class="meta">M.S. in Data Science &middot; In progress, expected May 2028 &middot; New York, NY</p>
+      </div>
+      <div class="entry">
+        <h3>Hunter College, City University of New York (CUNY)</h3>
+        <p class="meta">B.A. in Psychology (track: Health Psychology) &middot; May 2024 &middot; New York, NY</p>
+      </div>
+      <div class="entry">
+        <h3>Borough of Manhattan Community College, CUNY</h3>
+        <p class="meta">A.A. in Psychology &middot; May 2020 &middot; New York, NY</p>
+      </div>
+
+      <h3 class="sub-heading">Honors</h3>
+      <ul>
+        <li>Dean&rsquo;s List 2019</li>
+        <li>Dean&rsquo;s List 2017</li>
+      </ul>
+
+      <h3 class="sub-heading">Post-baccalaureate education</h3>
+      <div class="entry">
+        <h4>Tandon Bridge Program, NYU Tandon School of Engineering</h4>
+        <p class="meta">January 2025 &ndash; July 2025 &middot; Brooklyn, NY</p>
+        <p>A preparatory program designed to bridge foundational knowledge in computer science, data science, and engineering for non-technical backgrounds. Coursework included programming in C++, data structures, algorithms, discrete mathematics, and computer science fundamentals.</p>
+      </div>
+    </section>
+
+    <section id="experience" aria-labelledby="experience-title">
+      <h2 class="section-title" id="experience-title">Experience</h2>
+
+      <h3 class="sub-heading">Guest lectures</h3>
+      <div class="entry">
+        <h4>Infographics</h4>
+        <p class="meta">Psychological Determinants of Health Disparities Course, Department of Psychology, Hunter College &middot; March 2025</p>
+      </div>
+
+      <h3 class="sub-heading">Certifications</h3>
+      <ul>
+        <li>Summer Research and Career Development Program, supported by the National Cancer Institute (1R25CA260125)</li>
+        <li>Data Everywhere, Google Career Certificates</li>
+        <li>CITI Human Subjects Training (Responsible Conduct of Research Training, Biomedical Research Investigators and Key Personnel, CITI Good Clinical Practice)</li>
+      </ul>
+
+      <h3 class="sub-heading">Skills</h3>
+      <ul>
+        <li>REDCap, EPIC, Covidence, Microsoft Suite, C++, Python</li>
+        <li>Languages: Spanish (native speaker)</li>
+      </ul>
+
+      <h3 class="sub-heading">Professional memberships (student member)</h3>
+      <ul>
+        <li>American Psychological Association, 2025&ndash;2026</li>
+        <li>Society of Behavioral Medicine, 2024&ndash;2026</li>
+      </ul>
+    </section>
+
+    <section id="research" aria-labelledby="research-title">
+      <h2 class="section-title" id="research-title">Research</h2>
+
+      <h3 class="sub-heading">Research experience</h3>
+
+      <article class="entry">
+        <h4>Research Assistant</h4>
+        <p class="meta">October 2024 &ndash; March 2025 &middot; Division of Geriatrics and Palliative Medicine, Weill Cornell Medicine &middot; New York, NY</p>
+        <p><strong>Project:</strong> Social Engagement, Technology Access, and Loneliness in Older Adults living with Multiple Chronic Conditions (MCC)</p>
+        <p class="meta">PI: Atami De Main, PhD</p>
+        <ul>
+          <li>Literature review</li>
+          <li>Tracked and reported on the progress of the screening, data extraction, and quality assessment stages</li>
+          <li>Data analysis</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h4>Research Training and Career Development</h4>
+        <p class="meta">June 2024 &ndash; September 2024 &middot; STANDOUT in Behavioral Cancer Prevention and Control Summer Research and Career Development Program, Hunter College, CUNY &middot; New York, NY</p>
+        <p class="meta">Summer Training Accelerating and Nurturing the Development of Outstanding Undergraduate Trainees &mdash; a competitive NIH-funded program for outstanding undergraduate students (1R25CA260125, PI: Ford/Erblich)</p>
+        <p class="meta">Mentor: Tracey A. Revenson, PhD</p>
+        <p>Worked on two research projects:</p>
+        <div class="entry nested">
+          <h5>Supportive Care Interventions for Advanced Cancer Survivors: A Scoping Review</h5>
+          <p class="meta">PI: Madeleine Hardt, PhD</p>
+          <ul>
+            <li>Reviewed titles and abstracts of imported references to determine their relevance</li>
+            <li>Included or excluded studies based on predefined criteria</li>
+            <li>Retrieved and reviewed the full text of selected studies</li>
+            <li>Tracked and reported on the progress of the screening, data extraction, and quality assessment stages</li>
+            <li>Cross-checked extracted data and quality assessments for reliability</li>
+          </ul>
+        </div>
+        <div class="entry nested">
+          <h5>Mediating and Moderating Factors in Psychosocial Adjustment to Multiple Chronic Conditions among Hispanic/Latine Older Adults</h5>
+          <p class="meta">PI: Irina Mindlis, PhD, MPH / Atami De Main, PhD</p>
+          <ul>
+            <li>Developed electronic surveys in REDCap</li>
+            <li>Conducted patient recruitment in-person at community-based organizations and senior centers across NYC, including screening potential participants for eligibility, interviewing participants in English and Spanish, assisting participants with the completion of a one-time study survey, maintaining the research participant database, and managing participant stipends</li>
+            <li>Translation of study documents and questionnaires (English&ndash;Spanish)</li>
+            <li>Assisted in the preparation of publications related to the study, including poster submissions</li>
+            <li>Handled documentation in accordance with Weill Cornell Medicine protocols</li>
+            <li>Assisted Principal Investigator and regulatory staff with IRB protocol amendments</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="entry">
+        <h4>Research Assistant</h4>
+        <p class="meta">February 2024 &ndash; September 2024 &middot; Division of Geriatrics and Palliative Medicine, Weill Cornell Medicine &middot; New York, NY</p>
+        <p><strong>Project:</strong> Feasibility and Acceptability of Ecological Momentary Assessments in Depressed Older Adults with Multimorbidity</p>
+        <p class="meta">PI: Irina Mindlis, PhD, MPH / Cary Reid, MD, PhD</p>
+        <ul>
+          <li>Recruited patients from the geriatric ambulatory clinic (in-person, by phone, and email) and screened for eligibility</li>
+          <li>Obtained informed consent and conducted study baseline and follow-up interviews</li>
+          <li>Communicated with participants during the study follow-up period to prevent attrition</li>
+          <li>Trained participants in electronic ecological momentary assessments (EMA) and maintained participant database</li>
+          <li>Created training documents and handouts</li>
+          <li>Assisted in the preparation of publications related to the study, including poster submissions and presentations</li>
+          <li>Handled documentation per Weill Cornell Medicine protocols</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h4>Research Assistant</h4>
+        <p class="meta">January 2024 &ndash; May 2024 &middot; Coping and Health in Context Lab, Hunter College, CUNY &middot; New York, NY</p>
+        <p class="meta">Advisor: Tracey A. Revenson, PhD</p>
+        <ul>
+          <li>Prepared and presented research findings at lab meetings and conferences, contributing to collaborative discussion and feedback</li>
+          <li>Worked collaboratively with other research assistants, providing support and feedback during weekly lab meetings on projects related to coping with chronic illnesses</li>
+        </ul>
+      </article>
+
+      <h3 class="sub-heading">Research presentations</h3>
+      <p class="note">* denotes co-first authorship.</p>
+      <ol class="presentations">
+        <li>Bass, S. B., Vacio, A., Revenson, T. A., Abra&iacute;do-Lanza, A. F., Singley, K., Chertock, Y., Luck, C., Rotaru, A. M., Corneil, G. A., Sedano, B. F., Torres, J., &amp; Hall, M. J. (2026, April). <em>Culturally adapting the Gene Pilot electronic health decision support tool to enhance informed decision making about tumor genomic testing in Latinx cancer patients</em>. Abstract submitted for presentation at the Annual Meeting of the Society of Behavioral Medicine, Chicago, IL.</li>
+        <li>Torres, J.*, Rodriguez, I.*, Revenson, T. A., &amp; Hardt, M. M. (2025, March). <em>Are scoping reviews worth it? Insights Learned from Initial Screening of a Scoping Review for Advanced Cancer Survivors</em>. Abstract submitted to The Society of Behavioral Medicine&rsquo;s 46th Annual Meeting &amp; Scientific Sessions, San Francisco, CA. *Co-first authors.</li>
+        <li>Torres, J.*, Rodriguez, I.*, De Main, A., &amp; Mindlis, I. (2024, October). <em>Psychological Adjustment to Multiple Chronic Conditions among Hispanic/Latine Older Adults</em>. Poster accepted to the Health Equity Action Network 2024 Conference, San Francisco, CA. *Co-first authors.</li>
+        <li>Torres, J.*, Rodriguez, I.*, Revenson, T. A., &amp; Hardt, M. M. (2024, August). <em>Supportive Care Interventions for Advanced Cancer Survivors: A Scoping Review</em>. Oral presentation at the STANDOUT Second Annual Summer Conference, New York, NY. *Co-first authors.</li>
+        <li>Torres, J.*, Rodriguez, I.*, Revenson, T. A., &amp; Mindlis, I. (2024, May). <em>Feasibility and Acceptability of Ecological Momentary Assessments in Depressed Older Adults with Multimorbidity: Preliminary Results</em>. Poster presentation at the Hunter College Undergraduate STEM Research Conference, New York, NY. *Co-first authors.</li>
+      </ol>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 class="section-title" id="contact-title">Contact</h2>
+      <p>For questions or collaboration, please reach out by email.</p>
+      <address class="contact-block">
+        <a class="contact-email" href="mailto:Javier.torresgutama85@gc.cuny.edu">Javier.torresgutama85@gc.cuny.edu</a>
+        <span class="contact-loc">CUNY Graduate Center &middot; New York, NY</span>
+      </address>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Javier Torres</p>
+  </footer>
+
+  <script src="js/theme.js"></script>
+</body>
+</html>

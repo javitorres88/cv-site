@@ -1,0 +1,390 @@
+/* ============================================================
+   Javier Torres — personal site
+   Terracotta + sand palette, classic academic style
+   ============================================================ */
+
+/* ---------- Design tokens ---------- */
+
+:root {
+  color-scheme: light;
+  --bg: #EAE0C7;          /* sand */
+  --bg-alt: #F3EBD9;      /* lighter sand — cards */
+  --bg-deep: #DCCEAC;     /* deep sand — accents */
+  --text: #3A2E22;        /* dark brown */
+  --text-soft: #5E5040;   /* muted brown */
+  --accent: #A34E33;      /* terracotta — headings */
+  --accent-strong: #8F4328; /* terracotta — small text/links (AA) */
+  --accent-soft: #C2835E; /* light terracotta — decorative */
+  --rule: #CFBE9E;        /* hairlines */
+  --focus: #8F4328;
+  --shadow: 0 1px 2px rgba(58, 46, 34, .08), 0 12px 32px rgba(58, 46, 34, .08);
+  --serif: "Source Serif 4", Georgia, "Times New Roman", Times, serif;
+  --sans: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #2A1F16;          /* dark brown */
+  --bg-alt: #35281B;      /* card */
+  --bg-deep: #211710;     /* deep accents */
+  --text: #EBDEC5;        /* sand text */
+  --text-soft: #C4B391;   /* muted sand */
+  --accent: #D0895F;      /* terracotta — headings */
+  --accent-strong: #D9A07C; /* terracotta — links (AA on dark) */
+  --accent-soft: #A3673F;
+  --rule: #463527;
+  --focus: #E0A17A;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .25), 0 12px 32px rgba(0, 0, 0, .35);
+}
+
+/* Fallback for no-JS visitors: follow the system preference.
+   (With JS the data-theme attribute is always set, so this only
+   matches when the inline script did not run.) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --bg: #2A1F16;
+    --bg-alt: #35281B;
+    --bg-deep: #211710;
+    --text: #EBDEC5;
+    --text-soft: #C4B391;
+    --accent: #D0895F;
+    --accent-strong: #D9A07C;
+    --accent-soft: #A3673F;
+    --rule: #463527;
+    --focus: #E0A17A;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .25), 0 12px 32px rgba(0, 0, 0, .35);
+  }
+}
+
+/* ---------- Base ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--serif);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text);
+  margin: 0 0 .5rem;
+}
+
+h1 { font-size: clamp(2.4rem, 6vw, 3.4rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 1.85rem); }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1.05rem; margin-bottom: .25rem; }
+h5 { font-size: .95rem; }
+
+p { margin: 0 0 1rem; }
+
+a {
+  color: var(--accent-strong);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+a:hover { color: var(--accent); }
+
+ul, ol { margin: .4rem 0 1.25rem; }
+li { margin-bottom: .3rem; }
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* ---------- Skip link ---------- */
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  padding: .6rem 1rem;
+  background: var(--bg-alt);
+  color: var(--text);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: top .15s ease;
+}
+
+.skip-link:focus { top: 1rem; }
+
+/* ---------- Header / nav ---------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .7rem 1.25rem;
+  background: var(--bg);
+  border-bottom: 1px solid var(--rule);
+}
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .15rem 1.1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  display: inline-block;
+  padding: .4rem 0;
+  color: var(--text-soft);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: .98rem;
+}
+
+.site-nav a:hover { color: var(--accent); }
+
+/* ---------- Theme toggle ---------- */
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 2.6rem;
+  height: 2.6rem;
+  padding: 0;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--bg-alt);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.theme-toggle:hover { color: var(--accent); border-color: var(--accent-soft); }
+
+.theme-toggle svg {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+/* Sun shows in dark mode, moon in light mode */
+.icon-sun { display: none; }
+[data-theme="dark"] .icon-sun  { display: block; }
+[data-theme="dark"] .icon-moon { display: none; }
+
+/* ---------- Hero (business card) ---------- */
+
+.hero {
+  max-width: 40rem;
+  margin: 2.5rem auto 3rem;
+  padding: 2.75rem 1.5rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--rule);
+  border-top: 4px solid var(--accent);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.hero .name { margin-bottom: .5rem; }
+
+.hero .title {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+  color: var(--accent);
+  margin: 0 0 .35rem;
+}
+
+.hero .tagline {
+  color: var(--text-soft);
+  font-size: .98rem;
+  margin: 0 0 1.1rem;
+}
+
+.hero .meta {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: .95rem;
+}
+
+.hero .meta a { font-weight: 600; }
+.hero .dot { margin: 0 .4rem; }
+
+/* ---------- Main layout ---------- */
+
+main {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 0 1.25rem 2rem;
+}
+
+section {
+  padding: 2.25rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+section[id] { scroll-margin-top: 5rem; }
+
+.section-title {
+  color: var(--accent);
+  margin: 0 0 1.25rem;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 3px;
+  margin-top: .5rem;
+  background: var(--accent-soft);
+  border-radius: 2px;
+}
+
+.sub-heading {
+  margin: 1.75rem 0 .6rem;
+  color: var(--accent);
+  font-size: 1.05rem;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}
+
+/* ---------- Entries ---------- */
+
+.entry { margin: 0 0 1.5rem; }
+.entry.nested { margin: .75rem 0 0 1.1rem; }
+
+.entry .meta {
+  margin: 0 0 .5rem;
+  color: var(--text-soft);
+  font-size: .95rem;
+}
+
+.entry p { max-width: 42rem; }
+
+/* ---------- Presentations ---------- */
+
+.presentations {
+  list-style: none;
+  margin: .4rem 0 0;
+  padding: 0;
+  counter-reset: pres;
+}
+
+.presentations li {
+  counter-increment: pres;
+  position: relative;
+  margin-bottom: 1rem;
+  padding-left: 2.2rem;
+}
+
+.presentations li::before {
+  content: counter(pres);
+  position: absolute;
+  left: 0;
+  top: .05rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--bg);
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+.note {
+  color: var(--text-soft);
+  font-size: .9rem;
+}
+
+/* ---------- Contact ---------- */
+
+.contact-block {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+  align-items: flex-start;
+  padding: 1.25rem 1.5rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+}
+
+.contact-email {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.contact-loc { color: var(--text-soft); font-size: .95rem; }
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--rule);
+  text-align: center;
+  padding: 2rem 1rem 2.75rem;
+  color: var(--text-soft);
+  font-size: .9rem;
+}
+
+.site-footer p { margin: 0; }
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 540px) {
+  body { font-size: 1rem; }
+  .site-nav ul { gap: .1rem .75rem; }
+  .site-nav a { font-size: .88rem; }
+  .hero { margin: 1.5rem auto 2rem; }
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---------- Print ---------- */
+
+@media print {
+  body { background: #fff; color: #000; }
+  .site-header, .theme-toggle, .skip-link { display: none; }
+  .hero { box-shadow: none; border: none; border-top: 3px solid #8F4328; }
+  section { break-inside: avoid; }
+  a { color: #000; }
+}
